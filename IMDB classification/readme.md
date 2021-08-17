@@ -1,21 +1,18 @@
-# Dillinger
+# Классификация рецензий на imdb
 
-## _The Last Markdown Editor, Ever_
+## Цель проекта: 
+Обучить модель, которая по отзывам людей определяет понравился им фильм или нет.
 
+## Датасет:
+25000 рецензий пользователей imdb с бинарными метками, посчитанными по оценкам: 0 при оценке < 5 и 1 при оценке >= 7. https://www.kaggle.com/c/word2vec-nlp-tutorial/data
 
-[![N|Solid](https://cldup.com/dTxpPi9lDf.thumb.png)](https://nodesource.com/products/nsolid)
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+## Используемые функции:
+Предобработка данных: TfidfVectorizer, train_test_split, TruncatedSVD
 
+## Обученные модели и результаты:
+LogisticRegression: Точность - 0.88688, ROC-AUC - 0.9577
+LogisticRegression c L1-регуляризацией: Количество признаков - 107, Точность - 0.81264, ROC-AUC - 0.8958
+RandomizedLogisticRegression: Количество признаков - 13, Точность - 0.73696, ROC-AUC - 0.8106
+LogisticRegression после SVD: Количество признаков - 100, Точность - 0.85584, ROC-AUC - 0.9371
+RandomForestClassifier после SVD: Количество признаков - 100, Точность - 0.82512, ROC-AUC - 0.9039
 
-Dillinger is a cloud-enabled, mobile-ready, offline-storage compatible,
-
-AngularJS-powered HTML5 Markdown editor.
-
-
-- Type some Markdown on the left
-
-- See HTML in the right
-- ✨Magic ✨
-
-
-## Features
