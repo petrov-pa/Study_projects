@@ -1,22 +1,14 @@
-# Классификация рецензий на imdb
+# Анализ тональности отзывов
 
 ## Цель проекта: 
-Обучить модель, которая по отзывам людей определяет понравился им фильм или нет.
+Обучить модель, которая по отзывам людей на товар определяет понравился он им или нет.
 
 ## Датасет:
-25000 рецензий пользователей imdb с бинарными метками, посчитанными по оценкам: 0 при оценке < 5 и 1 при оценке >= 7. https://www.kaggle.com/c/word2vec-nlp-tutorial/data
+Данные из соревнования Kaggle Inclass https://www.kaggle.com/c/simplesentiment
 
 ## Используемые функции:
-Предобработка данных: TfidfVectorizer, train_test_split, TruncatedSVD
+Предобработка данных: PorterStemmer, WordNetLemmatizer, TfidfVectorizer, CountVectorizer, Word2Vec, BERT
 
-## Обученные модели и результаты:
-LogisticRegression: Точность - 0.88688, ROC-AUC - 0.9577
-
-LogisticRegression c L1-регуляризацией: Количество признаков - 107, Точность - 0.81264, ROC-AUC - 0.8958
-
-RandomizedLogisticRegression: Количество признаков - 13, Точность - 0.73696, ROC-AUC - 0.8106
-
-LogisticRegression после SVD: Количество признаков - 100, Точность - 0.85584, ROC-AUC - 0.9371
-
-RandomForestClassifier после SVD: Количество признаков - 100, Точность - 0.82512, ROC-AUC - 0.9039
+## Обученные модели:
+SGDClassifier, LinearSVC, RandomForestClassifier, XGBClassifier, полносвязная сеть
 
